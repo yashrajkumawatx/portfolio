@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yashraj Kumawat (@yashrajkumawatx) | Full-Stack Developer</title>
+  <meta name="description" content="M.Tech CSE grad student @ Maharani University | Full-Stack Developer (React, Node.js, Go) | Open to SDE roles & open-source collaboration." />
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome Icons for crisp dev & social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            obsidian: {
+              950: '#050507',
+              900: '#09090d',
+              850: '#0f1016',
+              800: '#161822',
+              700: '#222533',
+            },
+          },
+          animation: {
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-8px)' },
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Custom CSS for Glassmorphism, Seamless Portrait Vignette & Scroll Reveal -->
+  <style>
+    body {
+      background-color: #050507;
+      color: #f3f4f6;
+      overflow-x: hidden;
+    }
+
+    /* Subtle engineering grid background */
+    .bg-grid-pattern {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    }
+
+    /* Glassmorphism surface */
+    .glass-card {
+      background: rgba(15, 16, 22, 0.65);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .glass-card:hover {
+      border-color: rgba(34, 211, 238, 0.35);
+      box-shadow: 0 12px 40px -15px rgba(6, 182, 212, 0.18);
+    }
+
+    /* Seamless Portrait Blending for pure black studio photo */
+    .portrait-container {
+      background: radial-gradient(circle at 50% 42%, #131622 0%, #050507 72%);
+      position: relative;
+    }
+
+    .portrait-vignette {
+      -webkit-mask-image: radial-gradient(ellipse 85% 88% at 50% 45%, #000 58%, transparent 100%);
+      mask-image: radial-gradient(ellipse 85% 88% at 50% 45%, #000 58%, transparent 100%);
+    }
+
+    /* Scroll Reveal Animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #050507;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1f2330;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #06b6d4;
+    }
+
+    /* Print / Resume optimization */
+    @media print {
+      body { background: #ffffff !important; color: #111827 !important; }
+      .no-print { display: none !important; }
+      .glass-card { background: #f9fafb !important; border: 1px solid #d1d5db !important; color: #111827 !important; }
+    }
+  </style>
+</head>
+<body class="font-sans antialiased selection:bg-cyan-500/30 selection:text-cyan-200 bg-grid-pattern">
+
+  <!-- Ambient Top Glow -->
+  <div class="pointer-events-none fixed inset-x-0 top-0 -z-10 flex justify-center overflow-hidden">
+    <div class="h-[340px] w-[780px] rounded-full bg-gradient-to-tr from-cyan-500/12 via-indigo-500/10 to-emerald-500/10 blur-[120px]"></div>
+  </div>
+
+  <!-- =====================================================================
+       STICKY GLASS NAVIGATION BAR
+  ====================================================================== -->
+  <header class="sticky top-0 z-40 border-b border-white/[0.06] bg-obsidian-950/80 backdrop-blur-xl no-print">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3.5 sm:px-6">
+      <!-- Brand / Handle -->
+      <a href="#top" class="group flex items-center gap-2.5 focus:outline-none">
+        <span class="flex h-8 w-8 items-center justify-center rounded-lg border border-cyan-500/30 bg-cyan-500/10 font-mono text-sm font-bold text-cyan-400 transition group-hover:border-cyan-400 group-hover:bg-cyan-500/20">
+          YK
+        </span>
+        <span class="font-mono text-sm font-semibold tracking-tight text-gray-200 group-hover:text-white">
+          yashrajkumawatx<span class="text-cyan-400">_</span>
+        </span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav aria-label="Primary Navigation" class="hidden md:flex items-center gap-1 rounded-full border border-white/[0.06] bg-obsidian-900/80 p-1">
+        <a href="#about" class="nav-link rounded-full px-4 py-1.5 text-xs font-medium text-gray-400 transition hover:text-white">About</a>
+        <a href="#stack" class="nav-link rounded-full px-4 py-1.5 text-xs font-medium text-gray-400 transition hover:text-white">Tech Stack</a>
+        <a href="#projects" class="nav-link rounded-full px-4 py-1.5 text-xs font-medium text-gray-400 transition hover:text-white">Projects</a>
+        <a href="#education" class="nav-link rounded-full px-4 py-1.5 text-xs font-medium text-gray-400 transition hover:text-white">Education</a>
+        <a href="#contact" class="nav-link rounded-full px-4 py-1.5 text-xs font-medium text-gray-400 transition hover:text-white">Contact</a>
+      </nav>
+
+      <!-- Right Quick Actions -->
+      <div class="flex items-center gap-2.5">
+        <button id="cliModalBtn" type="button" title="Open Recruiter CLI Card" class="hidden sm:inline-flex items-center gap-2 rounded-lg border border-white/10 bg-obsidian-850 px-3 py-1.5 font-mono text-xs text-gray-300 transition hover:border-cyan-500/40 hover:text-cyan-300">
+          <i class="fa-solid fa-terminal text-cyan-400"></i>
+          <span>npx yashraj</span>
+        </button>
+
+        <a href="#contact" class="inline-flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-cyan-500 to-indigo-500 px-3.5 py-1.5 text-xs font-semibold text-obsidian-950 shadow-lg shadow-cyan-500/20 transition hover:brightness-110">
+          <span>Hire / Collab</span>
+          <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobileMenuBtn" type="button" aria-label="Toggle navigation menu" class="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-obsidian-900 text-gray-300 md:hidden hover:text-white">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Navigation -->
+    <div id="mobileMenu" class="hidden border-t border-white/[0.06] bg-obsidian-900/95 px-4 py-4 md:hidden">
+      <div class="flex flex-col gap-2">
+        <a href="#about" class="mobile-nav-link rounded-lg px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">About</a>
+        <a href="#stack" class="mobile-nav-link rounded-lg px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Tech Stack</a>
+        <a href="#projects" class="mobile-nav-link rounded-lg px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Projects</a>
+        <a href="#education" class="mobile-nav-link rounded-lg px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Education</a>
+        <a href="#contact" class="mobile-nav-link rounded-lg px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Contact</a>
+        <button id="cliModalBtnMobile" type="button" class="mt-1 flex items-center gap-2 rounded-lg border border-cyan-500/30 bg-cyan-500/10 px-3 py-2 font-mono text-xs text-cyan-300">
+          <i class="fa-solid fa-terminal"></i>
+          <span>Run: curl yashrajkumawatx.dev</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top" class="mx-auto max-w-6xl px-4 sm:px-6">
+
+    <!-- =====================================================================
+         HERO SECTION
+    ====================================================================== -->
+    <section class="relative pt-10 pb-16 sm:pt-16 sm:pb-24">
+      <div class="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-12">
+        
+        <!-- Left Column: Identity, Bio, Live Status Metadata, CTAs -->
+        <div class="lg:col-span-7 space-y-6">
+          <!-- Open to SDE Roles Status Pill -->
+          <div class="inline-flex flex-wrap items-center gap-2.5 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-3.5 py-1.5 text-xs font-medium text-emerald-300">
+            <span class="relative flex h-2 w-2">
+              <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"></span>
+            </span>
+            <span>Open to SDE Roles &amp; Open-Source Collaboration</span>
+          </div>
+
+          <!-- Name & Handle -->
+          <div class="space-y-2">
+            <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
+              Yashraj <span class="bg-gradient-to-r from-cyan-400 via-sky-300 to-indigo-400 bg-clip-text text-transparent">Kumawat</span>
+            </h1>
+            <div class="flex flex-wrap items-center gap-2 font-mono text-sm sm:text-base text-gray-400">
+              <span class="text-cyan-400 font-medium">@yashrajkumawatx</span>
+              <span class="text-gray-600">·</span>
+              <span class="rounded-md border border-white/10 bg-white/[0.03] px-2 py-0.5 text-xs text-gray-300">he/him</span>
+            </div>
+          </div>
+
+          <!-- Core Headline / Bio -->
+          <p class="max-w-2xl text-base leading-relaxed text-gray-300 sm:text-lg">
+            M.Tech CSE grad student <span class="font-semibold text-white">@ Maharani University</span> <span class="text-gray-600">|</span> Full-Stack Developer (<span class="font-mono text-cyan-300">React</span>, <span class="font-mono text-emerald-300">Node.js</span>, <span class="font-mono text-sky-300">Go</span>) <span class="text-gray-600">|</span> Building scalable web systems, clean APIs, and impactful open-source software.
+          </p>
+
+          <!-- Live Profile Telemetry Strip (University, Jaipur Location, Live IST Clock, Email) -->
+          <div class="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+            <!-- Affiliation -->
+            <div class="flex items-center gap-3 rounded-xl border border-white/[0.07] bg-obsidian-900/75 px-3.5 py-2.5">
+              <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-indigo-500/15 text-indigo-400">
+                <i class="fa-solid fa-graduation-cap text-sm"></i>
+              </div>
+              <div class="min-w-0">
+                <p class="text-[11px] uppercase tracking-wider text-gray-500">Affiliation</p>
+                <p class="truncate text-xs font-medium text-gray-200">Maharani University (M.Tech CSE)</p>
+              </div>
+            </div>
+
+            <!-- Location -->
+            <div class="flex items-center gap-3 rounded-xl border border-white/[0.07] bg-obsidian-900/75 px-3.5 py-2.5">
+              <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-cyan-500/15 text-cyan-400">
+                <i class="fa-solid fa-location-dot text-sm"></i>
+              </div>
+              <div class="min-w-0">
+                <p class="text-[11px] uppercase tracking-wider text-gray-500">Location</p>
+                <p class="truncate text-xs font-medium text-gray-200">Jaipur, Rajasthan, India</p>
+              </div>
+            </div>
+
+            <!-- Live IST Local Clock -->
+            <div class="flex items-center gap-3 rounded-xl border border-white/[0.07] bg-obsidian-900/75 px-3.5 py-2.5">
+              <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-emerald-500/15 text-emerald-400">
+                <i class="fa-regular fa-clock text-sm"></i>
+              </div>
+              <div class="min-w-0">
+                <p class="text-[11px] uppercase tracking-wider text-gray-500">Local Time</p>
+                <p class="truncate font-mono text-xs font-medium text-gray-200">
+                  <span id="liveIstClock">11:23:00</span> <span class="text-gray-400">(UTC +05:30)</span>
+                </p>
+              </div>
+            </div>
+
+            <!-- Interactive Copyable Email Pill -->
+            <button type="button" onclick="copyEmailAddress()" title="Click to copy yashrajkumawatx@gmail.com" class="group flex items-center justify-between gap-2 rounded-xl border border-white/[0.07] bg-obsidian-900/75 px-3.5 py-2.5 text-left transition hover:border-cyan-500/40 hover:bg-obsidian-850">
+              <div class="flex items-center gap-3 min-w-0">
+                <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-sky-500/15 text-sky-400 group-hover:bg-sky-500/25">
+                  <i class="fa-regular fa-envelope text-sm"></i>
+                </div>
+                <div class="min-w-0">
+                  <p class="text-[11px] uppercase tracking-wider text-gray-500">Direct Email</p>
+                  <p class="truncate font-mono text-xs font-medium text-gray-200 group-hover:text-cyan-300">yashrajkumawatx@gmail.com</p>
+                </div>
+              </div>
+              <span id="heroCopyBadge" class="shrink-0 rounded-md border border-white/10 bg-white/5 px-2 py-1 font-mono text-[10px] text-gray-400 transition group-hover:border-cyan-500/40 group-hover:text-cyan-300">
+                <i class="fa-regular fa-copy"></i>
+              </span>
+            </button>
+          </div>
+
+          <!-- Primary CTA Buttons -->
+          <div class="flex flex-wrap items-center gap-3 pt-2 no-print">
+            <a href="#projects" class="inline-flex items-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-obsidian-950 shadow-lg shadow-white/10 transition hover:bg-cyan-50">
+              <i class="fa-solid fa-code-branch text-cyan-600"></i>
+              <span>Explore Projects</span>
+            </a>
+
+            <a href="mailto:yashrajkumawatx@gmail.com?subject=SDE%20Opportunity%20%2F%20Collaboration" class="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-obsidian-900 px-5 py-3 text-sm font-medium text-white transition hover:border-cyan-400/50 hover:bg-obsidian-850">
+              <i class="fa-solid fa-paper-plane text-cyan-400"></i>
+              <span>Email Me</span>
+            </a>
+
+            <button type="button" onclick="window.print()" class="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm font-medium text-gray-300 transition hover:border-white/25 hover:text-white">
+              <i class="fa-solid fa-file-arrow-down text-gray-400"></i>
+              <span>Save CV / Print</span>
+            </button>
+          </div>
+
+          <!-- Social Links Row -->
+          <div class="flex items-center gap-4 pt-1 text-gray-400 no-print">
+            <a href="https://github.com/yashrajkumawatx" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="flex items-center gap-1.5 text-xs font-mono transition hover:text-white">
+              <i class="fa-brands fa-github text-base"></i>
+              <span>github.com/yashrajkumawatx</span>
+            </a>
+            <span class="text-gray-700">|</span>
+            <a href="https://linkedin.com/in/yashrajkumawatx" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="flex items-center gap-1.5 text-xs font-mono transition hover:text-cyan-400">
+              <i class="fa-brands fa-linkedin text-base"></i>
+              <span>in/yashrajkumawatx</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Blended Studio Portrait Card with Subtle Rim Lighting -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-full max-w-[390px]">
+            <!-- Outer Rim Glow -->
+            <div class="absolute -inset-1 rounded-3xl bg-gradient-to-b from-cyan-500/30 via-indigo-500/15 to-transparent opacity-75 blur-xl"></div>
+            
+            <!-- Portrait Frame -->
+            <div class="portrait-container relative overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
+              <!-- Subtle Top Rim Accent Line -->
+              <div class="absolute inset-x-10 top-0 h-[1.5px] bg-gradient-to-r from-transparent via-cyan-400/80 to-transparent"></div>
+
+              <!-- Provided Portrait Image -->
+              <div class="relative pt-4 px-2">
+                <img
+                  src="b90cc5ba-2d14-40cb-bbe8-35125df48884.png"
+                  alt="Yashraj Kumawat — Full-Stack Developer Portrait"
+                  onerror="this.onerror=null; this.src='https://placehold.co/600x720/09090d/22d3ee?text=Yashraj+Kumawat';"
+                  class="portrait-vignette mx-auto h-[380px] sm:h-[430px] w-full object-cover object-top select-none transition duration-500 hover:scale-[1.02]"
+                />
+              </div>
+
+              <!-- Bottom Gradient Fade + Floating Developer Badge -->
+              <div class="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-obsidian-950 via-obsidian-950/85 to-transparent"></div>
+
+              <div class="relative z-10 -mt-10 px-5 pb-5">
+                <div class="glass-card flex items-center justify-between rounded-2xl px-4 py-3">
+                  <div>
+                    <p class="font-mono text-xs font-semibold text-white">yashrajkumawatx</p>
+                    <p class="text-[11px] text-gray-400">React · Node.js · Go</p>
+                  </div>
+                  <div class="flex items-center gap-1.5 rounded-lg border border-cyan-500/25 bg-cyan-500/10 px-2.5 py-1 font-mono text-[11px] font-medium text-cyan-300">
+                    <i class="fa-solid fa-code text-[10px]"></i>
+                    <span>SDE</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         ABOUT & INTERACTIVE CODE CARD SECTION
+    ====================================================================== -->
+    <section id="about" class="py-14 sm:py-20 border-t border-white/[0.06] reveal">
+      <div class="mb-10 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p class="font-mono text-xs uppercase tracking-widest text-cyan-400">01 // Profile Overview</p>
+          <h2 class="mt-1 text-2xl font-bold tracking-tight text-white sm:text-3xl">Engineering Mindset</h2>
+        </div>
+        <p class="font-mono text-xs text-gray-500">Jaipur, IN · M.Tech CSE</p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-8 lg:grid-cols-12">
+        <!-- Narrative Card -->
+        <div class="lg:col-span-6 glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between space-y-6">
+          <div class="space-y-4 text-sm sm:text-base leading-relaxed text-gray-300">
+            <p>
+              I am <strong class="font-semibold text-white">Yashraj Kumawat</strong>, a postgraduate Computer Science &amp; Engineering student at <strong class="font-semibold text-white">Maharani University</strong> in Jaipur, Rajasthan, with a strong focus on end-to-end full-stack engineering and backend systems.
+            </p>
+            <p>
+              My technical work bridges responsive, accessible frontends in <span class="font-mono text-cyan-300">React &amp; TypeScript</span> with high-throughput APIs and concurrent microservices powered by <span class="font-mono text-emerald-300">Node.js</span> and <span class="font-mono text-sky-300">Go (Golang)</span>.
+            </p>
+            <p>
+              Currently seeking full-time <strong class="font-semibold text-white">Software Development Engineer (SDE)</strong> roles and actively looking to contribute to impactful open-source developer tools.
+            </p>
+          </div>
+
+          <!-- Quick Metrics -->
+          <div class="grid grid-cols-3 gap-3 border-t border-white/[0.07] pt-5">
+            <div>
+              <p class="font-mono text-xl font-bold text-white">M.Tech</p>
+              <p class="text-xs text-gray-400">CSE Grad Student</p>
+            </div>
+            <div>
+              <p class="font-mono text-xl font-bold text-cyan-400">Full-Stack</p>
+              <p class="text-xs text-gray-400">React · Node · Go</p>
+            </div>
+            <div>
+              <p class="font-mono text-xl font-bold text-emerald-400">OSS</p>
+              <p class="text-xs text-gray-400">Open to Collab</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Terminal / Go + JSON Profile Snippet -->
+        <div class="lg:col-span-6 glass-card rounded-2xl overflow-hidden flex flex-col">
+          <!-- Terminal Header Bar -->
+          <div class="flex items-center justify-between border-b border-white/[0.07] bg-obsidian-900/90 px-4 py-3">
+            <div class="flex items-center gap-2">
+              <span class="h-3 w-3 rounded-full bg-rose-500/80"></span>
+              <span class="h-3 w-3 rounded-full bg-amber-500/80"></span>
+              <span class="h-3 w-3 rounded-full bg-emerald-500/80"></span>
+              <span id="codeTabTitle" class="ml-2 font-mono text-xs text-gray-400">developer.go</span>
+            </div>
+
+            <!-- Interactive Code Language Switcher -->
+            <div class="flex items-center gap-1 rounded-lg bg-obsidian-950 p-0.5 border border-white/10">
+              <button type="button" onclick="switchCodeTab('go')" id="tab-go" class="code-tab-btn rounded-md bg-cyan-500/20 px-2.5 py-1 font-mono text-[11px] font-medium text-cyan-300 transition">Go</button>
+              <button type="button" onclick="switchCodeTab('node')" id="tab-node" class="code-tab-btn rounded-md px-2.5 py-1 font-mono text-[11px] font-medium text-gray-400 hover:text-white transition">Node.js</button>
+              <button type="button" onclick="switchCodeTab('json')" id="tab-json" class="code-tab-btn rounded-md px-2.5 py-1 font-mono text-[11px] font-medium text-gray-400 hover:text-white transition">JSON</button>
+            </div>
+          </div>
+
+          <!-- Code Display Area -->
+          <div class="relative flex-1 bg-obsidian-950/80 p-5 font-mono text-xs sm:text-[13px] leading-relaxed overflow-x-auto">
+            <pre id="codeContent" class="text-gray-300"></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         TECH STACK & CORE COMPETENCIES
+    ====================================================================== -->
+    <section id="stack" class="py-14 sm:py-20 border-t border-white/[0.06] reveal">
+      <div class="mb-10 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p class="font-mono text-xs uppercase tracking-widest text-cyan-400">02 // Technical Arsenal</p>
+          <h2 class="mt-1 text-2xl font-bold tracking-tight text-white sm:text-3xl">Core Stack &amp; Tooling</h2>
+        </div>
+        <p class="text-xs text-gray-400">Production-focused technologies across frontend, backend &amp; infra</p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <!-- Frontend -->
+        <div class="glass-card rounded-2xl p-6 space-y-4">
+          <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-500/15 text-cyan-400">
+            <i class="fa-brands fa-react text-lg"></i>
+          </div>
+          <h3 class="text-base font-semibold text-white">Frontend Engineering</h3>
+          <p class="text-xs leading-relaxed text-gray-400">Interactive, accessible SPAs with predictable state and crisp UI architecture.</p>
+          <div class="flex flex-wrap gap-1.5 pt-1">
+            <span class="rounded-md border border-cyan-500/20 bg-cyan-500/10 px-2.5 py-1 font-mono text-[11px] text-cyan-300">React.js</span>
+            <span class="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 font-mono text-[11px] text-gray-300">TypeScript</span>
+            <span class="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 font-mono text-[11px] text-gray-300">Next.js</span>
+            <span class="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 font-mono text-[11px] text-gray-300">Tailwind CSS</span>
+          </div>
+        </div>
+
+        <!-- Backend & Systems -->
+        <div class="glass-card rounded-2xl p-6 space-y-4">
+          <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/15 text-emerald-400">
+            <i class="fa-brands fa-node-js text-lg"></i>
+          </div>
+          <h3 class="text-base font-semibold text-white">Backend &amp; Concurrency</h3>
+          <p class="text-xs leading-relaxed text-gray-400">Low-latency REST/gRPC APIs, worker pools, and event-driven services.</p>
+          <div class="flex flex-wrap gap-1.5 pt-1">
+            <span class="rounded-md border border-emerald-500/20 bg-emerald-500/10 px-2.5 py-1 font-mono text-[11px] text-emerald-300">Node.js</span>
+            <span class="rounded-md border border-sky-500/20 bg-sky-500/10 px-2.5 py-1 font-mono text-[11px] text-sky-300">Go (Golang)</span>
+            <span class="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 font-mono text-[11px] text-gray-300">Express / Fiber</span>
+            <span class="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 font-mono text-[11px] text-gray-300">gRPC &amp; WebSockets</span>
+          </div>
+        </div>
+
+        <!-- Databases & Caching -->
+        <div class="glass-card rounded-2xl p-6 space-y-4">
+          <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-500/15 text-indigo-400">
+            <i class="fa-solid fa-database text-lg"></i>
+          </div>
+          <h3 class="text-base font-semibold text-white">Data &amp; Persistence</h3>
+          <p class="text-xs leading-relaxed text-gray-400">Schema design, query indexing, distributed caching, and ACID transactions.</p>
+          <div class="flex flex-wrap gap-1.5 pt-1">
+            <span class="rounded-md border border-indigo-500/20 bg-indigo-500/10 px-2.5 py-1 font-mono text-[11px] text-indigo-300">PostgreSQL</span>
+            <span class="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 font-mono text-[11px] text-gray-300">MongoDB</span>
+            <span class="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 font-mono text-[11px] text-gray-300">Redis</span>
+            <span class="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 font-mono text-[11px] text-gray-300">Prisma / SQLC</span>
+          </div>
+        </div>
+
+        <!-- DevOps & CS Foundations -->
+        <div class="glass-card rounded-2xl p-6 space-y-4">
+          <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-500/15 text-amber-400">
+            <i class="fa-solid fa-server text-lg"></i>
+          </div>
+          <h3 class="text-base font-semibold text-white">DevOps &amp; CS Core</h3>
+          <p class="text-xs leading-relaxed text-gray-400">Containerized deployments, CI/CD pipelines, and postgraduate CS fundamentals.</p>
+          <div class="flex flex-wrap gap-1.5 pt-1">
+            <span class="rounded-md border border-amber-500/20 bg-amber-500/10 px-2.5 py-1 font-mono text-[11px] text-amber-300">Docker</span>
+            <span class="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 font-mono text-[11px] text-gray-300">Linux / Git</span>
+            <span class="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 font-mono text-[11px] text-gray-300">GitHub Actions</span>
+            <span class="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 font-mono text-[11px] text-gray-300">DSA &amp; OS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         FILTERABLE FEATURED PROJECTS SECTION
+    ====================================================================== -->
+    <section id="projects" class="py-14 sm:py-20 border-t border-white/[0.06] reveal">
+      <div class="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+        <div>
+          <p class="font-mono text-xs uppercase tracking-widest text-cyan-400">03 // Selected Builds</p>
+          <h2 class="mt-1 text-2xl font-bold tracking-tight text-white sm:text-3xl">Featured Engineering Projects</h2>
+        </div>
+
+        <!-- Interactive Category Filter Pills -->
+        <div role="tablist" aria-label="Filter projects by technology" class="flex flex-wrap gap-2">
+          <button type="button" data-filter="all" class="filter-btn active rounded-full border border-cyan-500/40 bg-cyan-500/15 px-3.5 py-1.5 font-mono text-xs font-medium text-cyan-300 transition">
+            All Builds
+          </button>
+          <button type="button" data-filter="go" class="filter-btn rounded-full border border-white/10 bg-obsidian-900 px-3.5 py-1.5 font-mono text-xs font-medium text-gray-400 transition hover:border-white/25 hover:text-white">
+            Go / Systems
+          </button>
+          <button type="button" data-filter="fullstack" class="filter-btn rounded-full border border-white/10 bg-obsidian-900 px-3.5 py-1.5 font-mono text-xs font-medium text-gray-400 transition hover:border-white/25 hover:text-white">
+            Full-Stack (React + Node)
+          </button>
+          <button type="button" data-filter="oss" class="filter-btn rounded-full border border-white/10 bg-obsidian-900 px-3.5 py-1.5 font-mono text-xs font-medium text-gray-400 transition hover:border-white/25 hover:text-white">
+            Open-Source CLI
+          </button>
+        </div>
+      </div>
+
+      <!-- Projects Grid (Populated & Filtered via JS) -->
+      <div id="projectsGrid" class="grid grid-cols-1 gap-6 md:grid-cols-2"></div>
+    </section>
+
+    <!-- =====================================================================
+         EDUCATION & ACADEMIC TIMELINE
+    ====================================================================== -->
+    <section id="education" class="py-14 sm:py-20 border-t border-white/[0.06] reveal">
+      <div class="mb-10">
+        <p class="font-mono text-xs uppercase tracking-widest text-cyan-400">04 // Academic Background</p>
+        <h2 class="mt-1 text-2xl font-bold tracking-tight text-white sm:text-3xl">Education &amp; Credentials</h2>
+      </div>
+
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <!-- M.Tech CSE -->
+        <div class="glass-card relative rounded-2xl p-6 sm:p-7">
+          <div class="flex items-start justify-between gap-4">
+            <div class="flex items-center gap-3.5">
+              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-cyan-500/25 bg-cyan-500/10 text-cyan-400">
+                <i class="fa-solid fa-university text-lg"></i>
+              </div>
+              <div>
+                <span class="inline-block rounded-md bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 font-mono text-[10px] font-medium text-emerald-300 mb-1">Current · Postgraduate</span>
+                <h3 class="text-lg font-bold text-white">M.Tech in Computer Science &amp; Engineering</h3>
+                <p class="text-sm font-medium text-cyan-300">Maharani University · Jaipur, Rajasthan</p>
+              </div>
+            </div>
+          </div>
+
+          <p class="mt-4 text-xs sm:text-sm leading-relaxed text-gray-400">
+            Specializing in Distributed Systems, Advanced Algorithms, Cloud-Native Architecture, and Scalable Web Engineering. Conducting graduate research and building production-grade open-source tooling.
+          </p>
+
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="rounded-md bg-white/[0.04] px-2.5 py-1 font-mono text-[11px] text-gray-300">Distributed Computing</span>
+            <span class="rounded-md bg-white/[0.04] px-2.5 py-1 font-mono text-[11px] text-gray-300">Advanced Data Structures</span>
+            <span class="rounded-md bg-white/[0.04] px-2.5 py-1 font-mono text-[11px] text-gray-300">System Design</span>
+          </div>
+        </div>
+
+        <!-- Open Source & SDE Readiness -->
+        <div class="glass-card relative rounded-2xl p-6 sm:p-7">
+          <div class="flex items-start justify-between gap-4">
+            <div class="flex items-center gap-3.5">
+              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-indigo-500/25 bg-indigo-500/10 text-indigo-400">
+                <i class="fa-solid fa-code-pull-request text-lg"></i>
+              </div>
+              <div>
+                <span class="inline-block rounded-md bg-indigo-500/10 border border-indigo-500/20 px-2 py-0.5 font-mono text-[10px] font-medium text-indigo-300 mb-1">Active Focus</span>
+                <h3 class="text-lg font-bold text-white">Open-Source &amp; SDE Engineering</h3>
+                <p class="text-sm font-medium text-indigo-300">@yashrajkumawatx · Community &amp; Systems</p>
+              </div>
+            </div>
+          </div>
+
+          <p class="mt-4 text-xs sm:text-sm leading-relaxed text-gray-400">
+            Passionate about clean code architecture, automated testing, CLI developer ergonomics, and collaborating with engineering teams on full-stack web applications and Go backend services.
+          </p>
+
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="rounded-md bg-white/[0.04] px-2.5 py-1 font-mono text-[11px] text-gray-300">REST &amp; GraphQL APIs</span>
+            <span class="rounded-md bg-white/[0.04] px-2.5 py-1 font-mono text-[11px] text-gray-300">Microservices</span>
+            <span class="rounded-md bg-white/[0.04] px-2.5 py-1 font-mono text-[11px] text-gray-300">Open-Source Maintainer</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         CONTACT & COLLABORATION SECTION
+    ====================================================================== -->
+    <section id="contact" class="py-14 sm:py-24 border-t border-white/[0.06] reveal">
+      <div class="grid grid-cols-1 gap-8 lg:grid-cols-12">
+        
+        <!-- Left Contact Info -->
+        <div class="lg:col-span-5 space-y-6">
+          <div>
+            <p class="font-mono text-xs uppercase tracking-widest text-cyan-400">05 // Get In Touch</p>
+            <h2 class="mt-1 text-2xl font-bold tracking-tight text-white sm:text-3xl">Let's Build Together</h2>
+            <p class="mt-3 text-sm leading-relaxed text-gray-400">
+              Whether you're hiring for Software Development Engineer (SDE) positions, looking for a full-stack collaborator, or want to discuss open-source projects in React, Node.js, or Go — my inbox is open.
+            </p>
+          </div>
+
+          <!-- Direct Email Copy Card -->
+          <div class="glass-card rounded-2xl p-5 space-y-3">
+            <p class="font-mono text-xs uppercase tracking-wider text-gray-500">Primary Contact Channel</p>
+            <div class="flex items-center justify-between gap-2 rounded-xl border border-white/10 bg-obsidian-950 px-3.5 py-3">
+              <a href="mailto:yashrajkumawatx@gmail.com" class="truncate font-mono text-xs sm:text-sm font-medium text-cyan-300 hover:underline">
+                yashrajkumawatx@gmail.com
+              </a>
+              <button type="button" onclick="copyEmailAddress()" class="shrink-0 rounded-lg bg-cyan-500/15 border border-cyan-500/30 px-3 py-1.5 font-mono text-xs font-medium text-cyan-300 transition hover:bg-cyan-500/25">
+                Copy
+              </button>
+            </div>
+            <div class="flex items-center justify-between text-xs text-gray-400 pt-1">
+              <span><i class="fa-solid fa-location-dot text-cyan-400 mr-1.5"></i>Jaipur, Rajasthan</span>
+              <span class="font-mono"><span id="contactIstClock">11:23</span> IST</span>
+            </div>
+          </div>
+
+          <!-- Social Handles -->
+          <div class="flex flex-wrap gap-3">
+            <a href="https://github.com/yashrajkumawatx" target="_blank" rel="noopener noreferrer" class="glass-card inline-flex items-center gap-2.5 rounded-xl px-4 py-2.5 text-xs font-medium text-gray-200 hover:text-white">
+              <i class="fa-brands fa-github text-base text-cyan-400"></i>
+              <span>GitHub</span>
+            </a>
+            <a href="https://linkedin.com/in/yashrajkumawatx" target="_blank" rel="noopener noreferrer" class="glass-card inline-flex items-center gap-2.5 rounded-xl px-4 py-2.5 text-xs font-medium text-gray-200 hover:text-white">
+              <i class="fa-brands fa-linkedin text-base text-sky-400"></i>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://x.com/yashrajkumawatx" target="_blank" rel="noopener noreferrer" class="glass-card inline-flex items-center gap-2.5 rounded-xl px-4 py-2.5 text-xs font-medium text-gray-200 hover:text-white">
+              <i class="fa-brands fa-x-twitter text-base text-gray-300"></i>
+              <span>@yashrajkumawatx</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Interactive Message Form -->
+        <div class="lg:col-span-7">
+          <form id="contactForm" class="glass-card rounded-2xl p-6 sm:p-8 space-y-5">
+            <div class="flex items-center justify-between border-b border-white/[0.07] pb-4">
+              <h3 class="text-base font-semibold text-white">Send a Direct Message</h3>
+              <span class="font-mono text-[11px] text-emerald-400">● Replies within 24h</span>
+            </div>
+
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div>
+                <label for="senderName" class="block font-mono text-xs text-gray-400 mb-1.5">Your Name</label>
+                <input type="text" id="senderName" required placeholder="Alex Rivera" class="w-full rounded-xl border border-white/10 bg-obsidian-950/90 px-4 py-2.5 text-sm text-white placeholder-gray-600 focus:border-cyan-400 focus:outline-none" />
+              </div>
+              <div>
+                <label for="senderEmail" class="block font-mono text-xs text-gray-400 mb-1.5">Your Email</label>
+                <input type="email" id="senderEmail" required placeholder="alex@company.com" class="w-full rounded-xl border border-white/10 bg-obsidian-950/90 px-4 py-2.5 text-sm text-white placeholder-gray-600 focus:border-cyan-400 focus:outline-none" />
+              </div>
+            </div>
+
+            <div>
+              <label for="inquiryType" class="block font-mono text-xs text-gray-400 mb-1.5">Topic</label>
+              <select id="inquiryType" class="w-full rounded-xl border border-white/10 bg-obsidian-950/90 px-4 py-2.5 text-sm text-white focus:border-cyan-400 focus:outline-none">
+                <option value="SDE Role / Hiring Opportunity">SDE Role / Hiring Opportunity</option>
+                <option value="Open-Source Collaboration">Open-Source Collaboration</option>
+                <option value="Full-Stack Project / Freelance">Full-Stack Project Inquiry</option>
+                <option value="General Networking">Say Hello</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="senderMessage" class="block font-mono text-xs text-gray-400 mb-1.5">Message</label>
+              <textarea id="senderMessage" rows="4" required placeholder="Hi Yashraj, we'd love to discuss an SDE opportunity..." class="w-full rounded-xl border border-white/10 bg-obsidian-950/90 px-4 py-2.5 text-sm text-white placeholder-gray-600 focus:border-cyan-400 focus:outline-none"></textarea>
+            </div>
+
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-1">
+              <p class="text-xs text-gray-500">Opens your pre-filled email client &amp; copies details.</p>
+              <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-500 px-6 py-3 text-sm font-semibold text-obsidian-950 shadow-lg shadow-cyan-500/20 transition hover:brightness-110">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span>Dispatch Message</span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================================
+       FOOTER
+  ====================================================================== -->
+  <footer class="border-t border-white/[0.06] bg-obsidian-950 py-8">
+    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 sm:flex-row sm:px-6">
+      <div class="flex items-center gap-2 font-mono text-xs text-gray-400">
+        <span class="text-cyan-400">&lt;/&gt;</span>
+        <span>Crafted by <strong class="text-gray-200">Yashraj Kumawat</strong> (@yashrajkumawatx)</span>
+      </div>
+      <div class="font-mono text-xs text-gray-500">
+        Jaipur, Rajasthan · Maharani University · UTC +05:30
+      </div>
+    </div>
+  </footer>
+
+  <!-- =====================================================================
+       PROJECT DETAIL MODAL
+  ====================================================================== -->
+  <div id="projectModal" role="dialog" aria-modal="true" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+    <div class="glass-card relative w-full max-w-xl rounded-2xl border border-white/15 bg-obsidian-900 p-6 sm:p-8 shadow-2xl">
+      <button type="button" onclick="closeProjectModal()" aria-label="Close modal" class="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-gray-400 hover:text-white">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div id="modalBody" class="space-y-4"></div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       RECRUITER CLI / CURL CARD EASTER EGG MODAL
+  ====================================================================== -->
+  <div id="cliModal" role="dialog" aria-modal="true" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+    <div class="w-full max-w-lg overflow-hidden rounded-2xl border border-cyan-500/30 bg-obsidian-950 shadow-2xl shadow-cyan-500/10">
+      <div class="flex items-center justify-between border-b border-white/10 bg-obsidian-900 px-4 py-3">
+        <div class="flex items-center gap-2 font-mono text-xs text-cyan-300">
+          <i class="fa-solid fa-terminal"></i>
+          <span>yashrajkumawatx — Recruiter CLI Card</span>
+        </div>
+        <button type="button" onclick="closeCliModal()" class="text-gray-400 hover:text-white">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="p-5 font-mono text-xs leading-relaxed text-gray-300 space-y-3">
+        <p class="text-emerald-400">$ npx yashrajkumawatx@latest</p>
+        <div class="rounded-xl border border-white/10 bg-obsidian-900/90 p-4 space-y-1.5">
+          <p><span class="text-cyan-400">Name:</span> Yashraj Kumawat (he/him)</p>
+          <p><span class="text-cyan-400">Role:</span> Full-Stack Developer (React, Node.js, Go)</p>
+          <p><span class="text-cyan-400">Education:</span> M.Tech CSE @ Maharani University</p>
+          <p><span class="text-cyan-400">Location:</span> Jaipur, Rajasthan (IST / UTC +05:30)</p>
+          <p><span class="text-cyan-400">Email:</span> yashrajkumawatx@gmail.com</p>
+          <p><span class="text-cyan-400">Status:</span> <span class="text-emerald-400">Open to SDE roles &amp; open-source collab</span></p>
+        </div>
+        <div class="flex items-center justify-end gap-2 pt-2">
+          <button type="button" onclick="copyCliCard()" class="rounded-lg bg-cyan-500 px-3.5 py-2 font-semibold text-obsidian-950 hover:bg-cyan-400">
+            Copy CLI Summary
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       TOAST NOTIFICATION BANNER
+  ====================================================================== -->
+  <div id="toast" role="status" aria-live="polite" class="pointer-events-none fixed bottom-6 right-6 z-50 flex translate-y-6 items-center gap-2.5 rounded-xl border border-cyan-500/40 bg-obsidian-900/95 px-4 py-3 text-xs font-medium text-white opacity-0 shadow-2xl backdrop-blur-md transition-all duration-300">
+    <i class="fa-solid fa-circle-check text-emerald-400 text-sm"></i>
+    <span id="toastMessage">Copied to clipboard!</span>
+  </div>
+
+  <!-- =====================================================================
+       INTERACTIVE VANILLA JAVASCRIPT
+  ====================================================================== -->
+  <script>
+    // 1. LIVE IST (UTC +05:30) CLOCK FOR JAIPUR, RAJASTHAN
+    function updateIstClock() {
+      try {
+        const now = new Date();
+        // Format strictly in Asia/Kolkata (UTC +05:30)
+        const timeStringWithSeconds = new Intl.DateTimeFormat('en-GB', {
+          timeZone: 'Asia/Kolkata',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: false
+        }).format(now);
+
+        const timeStringShort = new Intl.DateTimeFormat('en-GB', {
+          timeZone: 'Asia/Kolkata',
+          hour: '2-digit',
+          minute: '2-digit',
+          hour12: false
+        }).format(now);
+
+        const heroClockEl = document.getElementById('liveIstClock');
+        const contactClockEl = document.getElementById('contactIstClock');
+        if (heroClockEl) heroClockEl.textContent = timeStringWithSeconds;
+        if (contactClockEl) contactClockEl.textContent = timeStringShort;
+      } catch (err) {
+        // Fallback manual UTC+5:30 calculation
+        const utc = new Date().getTime() + (new Date().getTimezoneOffset() * 60000);
+        const ist = new Date(utc + (3600000 * 5.5));
+        const formatted = ist.toTimeString().slice(0, 8);
+        const heroClockEl = document.getElementById('liveIstClock');
+        if (heroClockEl) heroClockEl.textContent = formatted;
+      }
+    }
+    updateIstClock();
+    setInterval(updateIstClock, 1000);
+
+    // 2. CLIPBOARD HELPER & TOAST NOTIFICATION (iFrame-safe execCommand + fallback)
+    let toastTimeout;
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMessage');
+      toastMsg.textContent = message;
+      toast.classList.remove('translate-y-6', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-6', 'opacity-0');
+      }, 3000);
+    }
+
+    function copyTextFallback(text) {
+      const textArea = document.createElement('textarea');
+      textArea.value = text;
+      textArea.style.position = 'fixed';
+      textArea.style.left = '-9999px';
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      try {
+        document.execCommand('copy');
+      } catch (err) {
+        console.error('Copy command failed:', err);
+      }
+      document.body.removeChild(textArea);
+    }
+
+    function copyEmailAddress() {
+      const email = 'yashrajkumawatx@gmail.com';
+      copyTextFallback(email);
+      showToast('Copied yashrajkumawatx@gmail.com to clipboard');
+
+      const badge = document.getElementById('heroCopyBadge');
+      if (badge) {
+        badge.innerHTML = '<i class="fa-solid fa-check text-emerald-400"></i>';
+        setTimeout(() => {
+          badge.innerHTML = '<i class="fa-regular fa-copy"></i>';
+        }, 2000);
+      }
+    }
+
+    // 3. INTERACTIVE CODE CARD TABS (Go / Node.js / JSON)
+    const codeSnippets = {
+      go: {
+        filename: 'developer.go',
+        code: `<span class="text-sky-400">package</span> main
+
+<span class="text-sky-400">type</span> Developer <span class="text-sky-400">struct</span> {
+    Name       <span class="text-emerald-300">string</span>   <span class="text-gray-500">// Yashraj Kumawat (he/him)</span>
+    Handle     <span class="text-emerald-300">string</span>   <span class="text-gray-500">// @yashrajkumawatx</span>
+    Education  <span class="text-emerald-300">string</span>   <span class="text-gray-500">// M.Tech CSE @ Maharani University</span>
+    Location   <span class="text-emerald-300">string</span>   <span class="text-gray-500">// Jaipur, Rajasthan (UTC +05:30)</span>
+    Stack      []<span class="text-emerald-300">string</span>
+    OpenToWork <span class="text-amber-300">bool</span>
+}
+
+<span class="text-sky-400">func</span> NewYashraj() Developer {
+    <span class="text-sky-400">return</span> Developer{
+        Name:       <span class="text-amber-200">"Yashraj Kumawat"</span>,
+        Handle:     <span class="text-amber-200">"yashrajkumawatx"</span>,
+        Education:  <span class="text-amber-200">"M.Tech CSE @ Maharani University"</span>,
+        Location:   <span class="text-amber-200">"Jaipur, Rajasthan"</span>,
+        Stack:      []<span class="text-emerald-300">string</span>{<span class="text-amber-200">"React"</span>, <span class="text-amber-200">"Node.js"</span>, <span class="text-amber-200">"Go"</span>},
+        OpenToWork: <span class="text-cyan-400">true</span>, <span class="text-gray-500">// SDE roles &amp; OSS collab</span>
+    }
+}`
+      },
+      node: {
+        filename: 'profile.service.js',
+        code: `<span class="text-sky-400">export const</span> yashrajProfile = {
+  name: <span class="text-amber-200">'Yashraj Kumawat'</span>,
+  handle: <span class="text-amber-200">'yashrajkumawatx'</span>,
+  pronouns: <span class="text-amber-200">'he/him'</span>,
+  affiliation: <span class="text-amber-200">'Maharani University (M.Tech CSE)'</span>,
+  location: {
+    city: <span class="text-amber-200">'Jaipur, Rajasthan'</span>,
+    timezone: <span class="text-amber-200">'UTC +05:30'</span>
+  },
+  coreStack: [<span class="text-amber-200">'React'</span>, <span class="text-amber-200">'Node.js'</span>, <span class="text-amber-200">'Go'</span>, <span class="text-amber-200">'PostgreSQL'</span>],
+  contact: <span class="text-amber-200">'yashrajkumawatx@gmail.com'</span>,
+  status: <span class="text-emerald-300">'OPEN_TO_SDE_ROLES_AND_OSS'</span>
+};`
+      },
+      json: {
+        filename: 'yashraj.json',
+        code: `{
+  <span class="text-cyan-300">"name"</span>: <span class="text-amber-200">"Yashraj Kumawat"</span>,
+  <span class="text-cyan-300">"handle"</span>: <span class="text-amber-200">"yashrajkumawatx"</span>,
+  <span class="text-cyan-300">"pronouns"</span>: <span class="text-amber-200">"he/him"</span>,
+  <span class="text-cyan-300">"degree"</span>: <span class="text-amber-200">"M.Tech CSE @ Maharani University"</span>,
+  <span class="text-cyan-300">"location"</span>: <span class="text-amber-200">"Jaipur, Rajasthan (UTC +05:30)"</span>,
+  <span class="text-cyan-300">"skills"</span>: [<span class="text-amber-200">"React"</span>, <span class="text-amber-200">"Node.js"</span>, <span class="text-amber-200">"Go"</span>, <span class="text-amber-200">"Docker"</span>],
+  <span class="text-cyan-300">"email"</span>: <span class="text-amber-200">"yashrajkumawatx@gmail.com"</span>,
+  <span class="text-cyan-300">"availableForSDE"</span>: <span class="text-emerald-400">true</span>
+}`
+      }
+    };
+
+    function switchCodeTab(lang) {
+      const selected = codeSnippets[lang];
+      if (!selected) return;
+      document.getElementById('codeTabTitle').textContent = selected.filename;
+      document.getElementById('codeContent').innerHTML = selected.code;
+
+      document.querySelectorAll('.code-tab-btn').forEach(btn => {
+        btn.classList.remove('bg-cyan-500/20', 'text-cyan-300');
+        btn.classList.add('text-gray-400');
+      });
+      const activeBtn = document.getElementById(`tab-${lang}`);
+      if (activeBtn) {
+        activeBtn.classList.remove('text-gray-400');
+        activeBtn.classList.add('bg-cyan-500/20', 'text-cyan-300');
+      }
+    }
+    switchCodeTab('go');
+
+    // 4. FILTERABLE PROJECTS SHOWCASE & MODAL PREVIEW
+    const projectsData = [
+      {
+        id: 'pulse-gateway',
+        title: 'PulseGate — Distributed API Rate Limiter & Gateway',
+        category: 'go',
+        badge: 'Go · Redis · Systems',
+        summary: 'High-concurrency reverse proxy and sliding-window rate limiter built in Go, sustaining 18k+ req/s with sub-2ms overhead.',
+        architecture: 'Implements Token Bucket and Sliding Window Log algorithms backed by Redis Lua scripts, Prometheus metrics endpoints, and zero-downtime YAML route reloading.',
+        tags: ['Go', 'Redis', 'Docker', 'Prometheus'],
+        github: 'https://github.com/yashrajkumawatx',
+        metrics: '18,500+ RPS · < 1.8ms p99 latency'
+      },
+      {
+        id: 'collab-canvas',
+        title: 'SyncFlow — Real-Time Collaborative Engineering Workspace',
+        category: 'fullstack',
+        badge: 'React · Node.js · WebSockets',
+        summary: 'Full-stack real-time Kanban, markdown docs, and architecture whiteboard powered by React, Node.js, and CRDT state sync.',
+        architecture: 'Features optimistic UI updates in React + TypeScript, room-based WebSocket pub/sub clusters in Node.js, and PostgreSQL persistence with role-based access control.',
+        tags: ['React', 'Node.js', 'TypeScript', 'PostgreSQL', 'Socket.io'],
+        github: 'https://github.com/yashrajkumawatx',
+        metrics: 'Multi-user CRDT sync · JWT + OAuth2'
+      },
+      {
+        id: 'gopher-bench',
+        title: 'GopherTrace — Zero-Dependency CLI HTTP Load Profiler',
+        category: 'oss',
+        badge: 'Open-Source CLI · Go',
+        summary: 'Cross-platform terminal benchmarking CLI for REST & GraphQL APIs with live latency histograms and JSON/CI export.',
+        architecture: 'Built using Go goroutine worker pools and custom terminal UI rendering. Designed for CI/CD regression gates and quick local endpoint stress-testing.',
+        tags: ['Go', 'CLI', 'Open-Source', 'Concurrency'],
+        github: 'https://github.com/yashrajkumawatx',
+        metrics: 'Single static binary · Cross-platform'
+      },
+      {
+        id: 'campus-grid',
+        title: 'UniMesh — Academic Research & Thesis Portal',
+        category: 'fullstack',
+        badge: 'React · Node.js · Go',
+        summary: 'Full-stack academic repository and peer-review workflow platform tailored for postgraduate CSE departments.',
+        architecture: 'Combines a React + Tailwind frontend with a Node.js API gateway and a Go PDF indexing microservice for fast full-text paper search.',
+        tags: ['React', 'Node.js', 'Go', 'Tailwind CSS'],
+        github: 'https://github.com/yashrajkumawatx',
+        metrics: 'Full-text indexing · Modular microservices'
+      }
+    ];
+
+    function renderProjects(filter = 'all') {
+      const grid = document.getElementById('projectsGrid');
+      const filtered = filter === 'all'
+        ? projectsData
+        : projectsData.filter(p => p.category === filter);
+
+      grid.innerHTML = filtered.map(project => `
+        <article class="glass-card group flex flex-col justify-between rounded-2xl p-6">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between gap-2">
+              <span class="rounded-full border border-cyan-500/25 bg-cyan-500/10 px-3 py-1 font-mono text-[11px] font-medium text-cyan-300">
+                ${project.badge}
+              </span>
+              <a href="${project.github}" target="_blank" rel="noopener noreferrer" aria-label="View source on GitHub" class="text-gray-400 transition hover:text-white">
+                <i class="fa-brands fa-github text-lg"></i>
+              </a>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-bold text-white transition group-hover:text-cyan-300">
+                ${project.title}
+              </h3>
+              <p class="mt-2 text-xs sm:text-sm leading-relaxed text-gray-400">
+                ${project.summary}
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-6 space-y-4 pt-4 border-t border-white/[0.06]">
+            <div class="flex flex-wrap gap-1.5">
+              ${project.tags.map(tag => `<span class="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 font-mono text-[11px] text-gray-300">${tag}</span>`).join('')}
+            </div>
+
+            <div class="flex items-center justify-between">
+              <span class="font-mono text-[11px] text-emerald-400">${project.metrics}</span>
+              <button type="button" onclick="openProjectModal('${project.id}')" class="inline-flex items-center gap-1.5 font-mono text-xs font-medium text-cyan-300 hover:text-cyan-200">
+                <span>Architecture</span>
+                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+        </article>
+      `).join('');
+    }
+    renderProjects('all');
+
+    // Filter button click listeners
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => {
+          b.classList.remove('active', 'border-cyan-500/40', 'bg-cyan-500/15', 'text-cyan-300');
+          b.classList.add('border-white/10', 'bg-obsidian-900', 'text-gray-400');
+        });
+        btn.classList.remove('border-white/10', 'bg-obsidian-900', 'text-gray-400');
+        btn.classList.add('active', 'border-cyan-500/40', 'bg-cyan-500/15', 'text-cyan-300');
+        renderProjects(btn.dataset.filter);
+      });
+    });
+
+    // Project Modal Controls
+    function openProjectModal(projectId) {
+      const p = projectsData.find(item => item.id === projectId);
+      if (!p) return;
+      const modal = document.getElementById('projectModal');
+      const body = document.getElementById('modalBody');
+
+      body.innerHTML = `
+        <span class="inline-block rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 font-mono text-xs text-cyan-300">${p.badge}</span>
+        <h3 class="text-xl font-bold text-white">${p.title}</h3>
+        <p class="text-sm leading-relaxed text-gray-300">${p.summary}</p>
+        <div class="rounded-xl border border-white/10 bg-obsidian-950 p-4 space-y-1.5">
+          <p class="font-mono text-xs uppercase tracking-wider text-cyan-400">System Architecture Notes</p>
+          <p class="text-xs sm:text-sm leading-relaxed text-gray-400">${p.architecture}</p>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          ${p.tags.map(t => `<span class="rounded-md bg-white/5 px-2.5 py-1 font-mono text-xs text-gray-300">${t}</span>`).join('')}
+        </div>
+        <div class="flex items-center justify-between pt-3 border-t border-white/10">
+          <span class="font-mono text-xs text-emerald-400">${p.metrics}</span>
+          <a href="${p.github}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-xl bg-white px-4 py-2 text-xs font-semibold text-obsidian-950 hover:bg-cyan-50">
+            <i class="fa-brands fa-github"></i>
+            <span>View Repository</span>
+          </a>
+        </div>
+      `;
+
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeProjectModal() {
+      const modal = document.getElementById('projectModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    // 5. RECRUITER CLI MODAL CONTROLS
+    const cliModal = document.getElementById('cliModal');
+    document.getElementById('cliModalBtn')?.addEventListener('click', () => {
+      cliModal.classList.remove('hidden');
+      cliModal.classList.add('flex');
+    });
+    document.getElementById('cliModalBtnMobile')?.addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.add('hidden');
+      cliModal.classList.remove('hidden');
+      cliModal.classList.add('flex');
+    });
+
+    function closeCliModal() {
+      cliModal.classList.add('hidden');
+      cliModal.classList.remove('flex');
+    }
+
+    function copyCliCard() {
+      const summary = `Yashraj Kumawat (@yashrajkumawatx · he/him) | M.Tech CSE @ Maharani University | Full-Stack Developer (React, Node.js, Go) | Jaipur, Rajasthan | yashrajkumawatx@gmail.com`;
+      copyTextFallback(summary);
+      showToast('Copied Recruiter CLI summary!');
+      closeCliModal();
+    }
+
+    // Close modals on backdrop click or Escape key
+    window.addEventListener('click', (e) => {
+      if (e.target === document.getElementById('projectModal')) closeProjectModal();
+      if (e.target === cliModal) closeCliModal();
+    });
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeProjectModal();
+        closeCliModal();
+      }
+    });
+
+    // 6. MOBILE NAVIGATION TOGGLE
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuBtn?.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    // 7. CONTACT FORM HANDLER (Mailto trigger + confirmation toast)
+    document.getElementById('contactForm')?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('senderName').value.trim();
+      const email = document.getElementById('senderEmail').value.trim();
+      const topic = document.getElementById('inquiryType').value;
+      const message = document.getElementById('senderMessage').value.trim();
+
+      const subject = encodeURIComponent(`[Portfolio] ${topic} — from ${name}`);
+      const body = encodeURIComponent(`Hi Yashraj,\n\n${message}\n\nBest,\n${name} (${email})`);
+
+      showToast('Opening mail client for yashrajkumawatx@gmail.com...');
+      window.location.href = `mailto:yashrajkumawatx@gmail.com?subject=${subject}&body=${body}`;
+    });
+
+    // 8. SCROLL REVEAL & ACTIVE SECTION HIGHLIGHTING
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  </script>
+</body>
+</html>
